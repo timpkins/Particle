@@ -13,7 +13,20 @@
  *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
- *  
+ *
  */
 
-include ':Demo', ':Quark'
+package cn.quark;
+
+import java.lang.Thread.UncaughtExceptionHandler;
+
+/**
+ * @author timpkins
+ */
+public class DefaultExceptionHandler implements UncaughtExceptionHandler{
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+
+    }
+}

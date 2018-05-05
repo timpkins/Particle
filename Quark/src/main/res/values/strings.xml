@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ /*
   ~  * Copyright (C) 2018 timpkins(timpkins@163.com)
@@ -17,5 +18,5 @@
   -->
 
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <string name="log_prefix">QUARK_</string>
 </resources>
