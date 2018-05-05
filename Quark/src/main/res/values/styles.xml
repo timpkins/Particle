@@ -27,4 +27,9 @@
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:clipToPadding">false</item>
     </style>
+
+    <style name="progressBarCircle" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/loadingContent</item>
+        <item name="android:indeterminateTintMode">src_atop</item>
+    </style>
 </resources>

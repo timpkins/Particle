@@ -17,8 +17,8 @@
   ~  */
   -->
 
-<resources>
-    <color name="windowBackground">#F0F0F0</color>
-    <color name="loadingBack">#C0000000</color>
-    <color name="loadingContent">#C8C9CA</color>
-</resources>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="5dp"/>
+    <solid android:color="@color/loadingBack"/>
+</shape>

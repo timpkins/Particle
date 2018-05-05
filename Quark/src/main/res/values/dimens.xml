@@ -18,7 +18,6 @@
   -->
 
 <resources>
-    <color name="windowBackground">#F0F0F0</color>
-    <color name="loadingBack">#C0000000</color>
-    <color name="loadingContent">#C8C9CA</color>
+    <dimen name="loadingPadding">10dp</dimen>
+    <dimen name="loadingSize">50dp</dimen>
 </resources>

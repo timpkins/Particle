@@ -18,28 +18,38 @@
 
 package cn.quark.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import cn.quark.BaseApplication;
+import cn.quark.R;
+import cn.quark.core.ILoadingProgress;
 import cn.quark.core.IUIHandler;
+import cn.quark.view.LoadingProgressView;
 
 /**
  * Activity基类
  * @author timpkins
  */
-public abstract class BaseActivity extends AppCompatActivity implements IUIHandler{
+public abstract class BaseActivity extends AppCompatActivity implements IUIHandler, ILoadingProgress{
     protected BaseApplication mApplication;
+    private LoadingProgressView mLoadingView;
 
+    @SuppressLint("InflateParams")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mApplication = BaseApplication.getInstance();
         mApplication.addActivity(this);
+
+        mLoadingView = (LoadingProgressView) LayoutInflater.from(this).inflate(R.layout.common_loading_progress, null);
+        show();
 
         initView(savedInstanceState);
         initData();
@@ -57,8 +67,29 @@ public abstract class BaseActivity extends AppCompatActivity implements IUIHandl
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        dismiss();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         mApplication.removeActivity(this);
+    }
+
+    @Override
+    public void show(int resId) {
+        mLoadingView.show(resId);
+    }
+
+    @Override
+    public void show() {
+        mLoadingView.show();
+    }
+
+    @Override
+    public void dismiss() {
+        mLoadingView.dismiss();
     }
 }

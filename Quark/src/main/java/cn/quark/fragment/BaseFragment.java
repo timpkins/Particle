@@ -18,6 +18,7 @@
 
 package cn.quark.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,14 +29,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import cn.quark.R;
+import cn.quark.core.ILoadingProgress;
 import cn.quark.core.IUIHandler;
+import cn.quark.view.LoadingProgressView;
 
 /**
  * Fragment基类
  * @author timpkins
  */
-public abstract class BaseFragment extends Fragment implements IUIHandler{
+public abstract class BaseFragment extends Fragment implements IUIHandler, ILoadingProgress{
     private View view;
+    private LoadingProgressView mLoadingView;
     protected static String KEY_NAME = "kname";
 
     @Override
@@ -58,10 +63,20 @@ public abstract class BaseFragment extends Fragment implements IUIHandler{
         this.view = view;
     }
 
+    @SuppressLint("InflateParams")
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mLoadingView = (LoadingProgressView) LayoutInflater.from(getContext()).inflate(R.layout.common_loading_progress, null);
+        show();
+
         initData();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        dismiss();
     }
 
     @Override
@@ -73,5 +88,20 @@ public abstract class BaseFragment extends Fragment implements IUIHandler{
     public <T extends AppCompatActivity> void startActivity(Class<T> clazz) {
         Intent intent = new Intent(getActivity(), clazz);
         getActivity().startActivity(intent);
+    }
+
+    @Override
+    public void show(int resId) {
+        mLoadingView.show(resId);
+    }
+
+    @Override
+    public void show() {
+        mLoadingView.show();
+    }
+
+    @Override
+    public void dismiss() {
+        mLoadingView.dismiss();
     }
 }
