@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ /*
   ~  * Copyright (C) 2018 timpkins(timpkins@163.com)
@@ -16,13 +17,6 @@
   ~  */
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="cn.timpkins.particle.cn.particle.activity.MainActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="ifRoom" />
-</menu>
+<resources>
+    <color name="windowBackground">#F0F0F0</color>
+</resources>
