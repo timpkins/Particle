@@ -16,32 +16,16 @@
  *
  */
 
-package cn.particle.fragment;
-
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-
-import cn.quark.fragment.MaterialTitleFragment;
-import cn.timpkins.particle.R;
+package cn.quark.core;
 
 /**
+ * 带标题栏的Activity操作
  * @author timpkins
  */
-public class MainFragment extends MaterialTitleFragment {
+public interface IUITitleHandler extends IUIHandler {
 
-    @Override
-    public void initView(@Nullable Bundle savedInstanceState) {
-        setContentView(R.layout.fragment_main_layout);
-    }
-
-    @Override
-    public void initData() {
-
-    }
-
-    @Override
-    public void initTitle() {
-        setTitleBack();
-        setTitleName(R.string.action_settings);
-    }
+    /**
+     * Activity中标题栏的操作
+     */
+    void initTitle();
 }

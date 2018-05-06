@@ -32,4 +32,51 @@
         <item name="android:indeterminateTint">@color/loadingContent</item>
         <item name="android:indeterminateTintMode">src_atop</item>
     </style>
+
+    <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/Toolbar.TitleText</item>
+        <item name="android:titleTextColor">@color/toolbarCommon</item>
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:minHeight">@dimen/titlebarHeight</item>
+        <item name="titleMargin">0dp</item>
+        <item name="maxButtonHeight">@dimen/titlebarHeight</item>
+        <item name="buttonGravity">top</item>
+        <item name="android:contentInsetStart">0dp</item>
+        <item name="android:contentInsetEnd">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:popupTheme">@style/ToolbarPopupTheme</item>
+        <item name="android:theme">@style/buttonStyle</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="colorControlNormal">@color/toolbarCommon</item>
+    </style>
+
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/titlebarTextSize</item>
+        <item name="android:dropDownListViewStyle">@style/AppTheme.DivideLine.MenuLine</item>
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <item name="android:dropDownListViewStyle">@style/AppTheme.DivideLine.MenuLine</item>
+        <item name="android:textColor">@color/toolbarCommon</item>
+    </style>
+
+
+    <style name="AppTheme.DivideLine.MenuLine" parent="Base.Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@color/toolbarCommon</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <style name="OverflowMenuStyle">
+        <item name="overlapAnchor">true</item>
+        <item name="android:popupBackground">?attr/colorPrimary</item>
+        <item name="android:dropDownVerticalOffset">1dp</item>
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <item name="android:textColor">@color/toolbarCommon</item>
+    </style>
 </resources>

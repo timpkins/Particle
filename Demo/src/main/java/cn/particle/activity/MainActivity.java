@@ -23,10 +23,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import cn.particle.fragment.MainFragment;
-import cn.quark.activity.BaseActivity;
+import cn.quark.activity.MaterialTitleActivity;
 import cn.timpkins.particle.R;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends MaterialTitleActivity {
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
@@ -40,5 +40,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
+    }
+
+    @Override
+    public void initTitle() {
+        setTitleBack();
+        setTitleName(R.string.app_name);
     }
 }

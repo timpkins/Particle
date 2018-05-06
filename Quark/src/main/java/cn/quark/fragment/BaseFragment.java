@@ -39,7 +39,7 @@ import cn.quark.view.LoadingProgressView;
  * @author timpkins
  */
 public abstract class BaseFragment extends Fragment implements IUIHandler, ILoadingProgress{
-    private View view;
+    private View mView;
     private LoadingProgressView mLoadingView;
     protected static String KEY_NAME = "kname";
 
@@ -52,7 +52,7 @@ public abstract class BaseFragment extends Fragment implements IUIHandler, ILoad
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return view;
+        return mView;
     }
 
     public void setContentView(@LayoutRes int layoutResID) {
@@ -60,7 +60,7 @@ public abstract class BaseFragment extends Fragment implements IUIHandler, ILoad
     }
 
     public void setContentView(View view) {
-        this.view = view;
+        this.mView = view;
     }
 
     @SuppressLint("InflateParams")
@@ -81,7 +81,7 @@ public abstract class BaseFragment extends Fragment implements IUIHandler, ILoad
 
     @Override
     public <T extends View> T $(int resId) {
-        return (T)view.findViewById(resId);
+        return (T) mView.findViewById(resId);
     }
 
     @Override

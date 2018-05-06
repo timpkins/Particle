@@ -17,11 +17,17 @@
   ~  */
   -->
 
-<resources>
-    <dimen name="loadingPadding">10dp</dimen>
-    <dimen name="loadingSize">50dp</dimen>
+<cn.quark.view.MaterialTitlebar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titlebarHeight">
 
-    <dimen name="titlebarHeight">46dp</dimen>
-    <dimen name="titlebarTextSize">18sp</dimen>
-    <dimen name="titlebarLeftMargin">10dp</dimen>
-</resources>
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/toolbarCommon"
+        android:layout_gravity="center"
+        android:textSize="@dimen/titlebarTextSize" />
+</cn.quark.view.MaterialTitlebar>
